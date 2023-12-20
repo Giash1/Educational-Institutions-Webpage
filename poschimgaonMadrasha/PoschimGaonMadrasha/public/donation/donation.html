@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="donation.css">
+</head>
+<body>
+    <h1>Donation/Payment</h1>
+
+    <form action="/submit_donation" method="post" id="payment-form">
+        <label for="type">Type:</label><br>
+        <select id="type" name="type" required>
+            <option value="">--Please choose an option--</option>
+            <option value="donation">Donation</option>
+            <option value="payment">Payment</option>
+        </select><br>
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="address">Address:</label><br>
+        <span style="font-size: 12px;">house number, city, post-code, post-office, thana, district</span><br>
+        <input type="text" id="address" name="address" required><br>
+        <label for="amount">Donation Amount:</label><br>
+        <input type="number" id="amount" name="amount" required><br>
+        <label for="payment-method">Payment Method:</label><br>
+        <select id="payment-method" name="payment-method" onchange="togglePaymentDetails()" required>
+            <option value="">--Your Payment Methods--</option>
+            <option value="bank">Bank Account</option>
+            <option value="bikash">Bikash</option>
+        </select><br>
+
+        <!-- Bank Details Section -->
+        <div id="bank-details" style="display: none;">
+            <label for="bank-account">Your Account Number:</label><br>
+                 <input type="text" id="bank-account" name="bank-account"><br>
+                 <label for="bank-name">Your Bank Name:</label><br>
+                 <input type="text" id="bank-name" name="bank-name"><br>
+                 <label for="branch">Your Branch Name:</label><br>
+                   <input type="text" id="branch" name="branch-name"><br>
+
+                <span style="font-size: 12px;">Pay to: 123456789098, Agrani Bank, Sarolia Branch</span>
+
+
+
+        </div>
+
+        <!-- Bikash Details Section -->
+        <div id="bikash-details" style="display: none;">
+            <label for="bikash-number">Your Bikash Number:</label><br>
+            <input type="text" id="bikash-number" name="bikash-number"><br>
+            <label for="bikash-name">Your Bikash Name:</label><br>
+            <input type="text" id="bikash-name" name="bikash-name"><br>
+            <span style="font-size: 12px;">Pay to: 01712345678, PoschimGaon Madrasha</span><br>
+            <!-- Add input fields for Bikash details here -->
+
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function togglePaymentDetails() {
+            var paymentMethod = document.getElementById('payment-method').value;
+            var bankDetails = document.getElementById('bank-details');
+            var bikashDetails = document.getElementById('bikash-details');
+
+            // Hide both sections initially
+            bankDetails.style.display = 'none';
+            bikashDetails.style.display = 'none';
+
+            // Show the relevant section based on the selected payment method
+            if (paymentMethod === 'bank') {
+                bankDetails.style.display = 'block';
+            } else if (paymentMethod === 'bikash') {
+                bikashDetails.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

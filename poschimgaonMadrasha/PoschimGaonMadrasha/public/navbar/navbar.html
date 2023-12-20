@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+</head>
+<body>
+       <div style="text-align: center;">
+    <img src="./images/po-removebg-preview.jpg" alt="Logo 1" style="height: 50px;">
+    <h1 style="display: inline-block; margin: 10 20px; color: rgb(211, 33, 143);">Poschim Gaon Madrasha -i- Islamia Jameul Ulom</h1>
+    <img src="./images/po-removebg-preview.jpg" alt="Logo 2" style="height: 50px;">
+</div>
+    <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Admission</a></li>
+                <li><a href="#">Parents & Students</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="./donation/donation.html">Donation/Payment</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Archieve</a>
+                    <div class="dropdown-content">
+                        <a href="./archieve/history.html">History</a>
+                        <a href="./archieve/gallery.html">Gallery</a>
+                    </div>
+                </li>
+                <li>
+                    <select id="language" title="Select Language">
+                        <option value="en">English</option>
+                        <option value="bn">Bangla</option>
+                    </select>
+                </li>
+                <li>
+                    <form action="/search" method="get">
+                        <input type="text" name="q" placeholder="Search">
+                        <button type="submit" title="Search"><i
+                                class="fas fa-search"></i></button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+</body>
+</html>
